@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
         if (position <= screenHeight / 2 && position + renderBox.size.height > 0) {
           setState(() {
             currentSection = section;
+            print("Current section: $currentSection"); // Debug output
           });
         }
       }
@@ -61,8 +62,14 @@ class _HomePageState extends State<HomePage> {
         context,
         duration: Duration(milliseconds: 500),
         curve: Curves.easeInOut,
-      );
-      GoRouter.of(context).go('/#${section}');
+      ).then((_) {
+        // Adding a delay to ensure the scroll has completed
+        Future.delayed(Duration(milliseconds: 100), () {
+          setState(() {
+            currentSection = section; // Update the current section after scrolling
+          });
+        });
+      });
     }
   }
 
@@ -103,19 +110,47 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              title: Text('About'),
+              title: Text(
+                'About',
+                style: TextStyle(
+                  fontFamily: 'Edu',
+                  fontSize: 20,
+                  color: currentSection == 'about' ? MyColors.accentBlue : Colors.black,
+                ),
+              ),
               onTap: () => _scrollToSection('about'),
             ),
             ListTile(
-              title: Text('Projects'),
+              title: Text(
+                'Projects',
+                style: TextStyle(
+                  fontFamily: 'Edu',
+                  fontSize: 20,
+                  color: currentSection == 'projects' ? MyColors.accentBlue : Colors.black,
+                ),
+              ),
               onTap: () => _scrollToSection('projects'),
             ),
             ListTile(
-              title: Text('Services'),
+              title: Text(
+                'Services',
+                style: TextStyle(
+                  fontFamily: 'Edu',
+                  fontSize: 20,
+                  color: currentSection == 'services' ? MyColors.accentBlue : Colors.black,
+                ),
+              ),
               onTap: () => _scrollToSection('services'),
             ),
             ListTile(
-              title: Text('Contact'),
+              title: Text(
+                'Contact',
+                style: TextStyle(
+                  fontFamily: 'Edu',
+                  fontSize: 20,
+                  color: currentSection == 'contact' ? MyColors.accentBlue : Colors.black,
+                ),
+              ),
               onTap: () => _scrollToSection('contact'),
             ),
           ],
