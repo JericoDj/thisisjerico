@@ -6,7 +6,7 @@ class AboutSection extends StatelessWidget {
   const AboutSection({Key? key}) : super(key: key);
 
   void downloadCV() async {
-    final url = 'https://firebasestorage.googleapis.com/v0/b/edukid-60f55.appspot.com/o/Jerico_De_Jesus_CV.pdf?alt=media&token=76a79aed-5b43-462d-9d2f-1b241f68d684';
+    final url = 'https://firebasestorage.googleapis.com/v0/b/edukid-60f55.appspot.com/o/Jerico%20De%20Jesus%20CV.pdf?alt=media&token=a3e0b80a-07ed-4228-92a1-846ad3012e54';
     if (!await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication)) {
       throw 'Could not download CV';
     }

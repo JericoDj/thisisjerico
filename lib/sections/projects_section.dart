@@ -93,15 +93,15 @@ class ProjectsSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'Projects',
-              style: TextStyle(
-                fontSize: textFontSize,
-                fontFamily: 'Caligraphy',
-                fontWeight: FontWeight.bold,
-                color: MyColors.homepageHeadlineText,
-              ),
-            ),
+          Text(
+          'Projects',
+          style: TextStyle(
+            fontSize: isSmallScreen ? 36 : 48,
+            fontFamily: 'Caligraphy',
+            fontWeight: FontWeight.bold,
+            color: MyColors.homepageHeadlineText,
+          ),
+        ),
             SizedBox(height: 12),
             Text(
               'Here are some of the projects I’ve developed to help clients achieve seamless and efficient solutions,',
