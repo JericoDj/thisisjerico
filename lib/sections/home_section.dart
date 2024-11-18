@@ -71,7 +71,7 @@ class HomeSection extends StatelessWidget {
           Text(
             'Turning Ideas Into Reality',
             style: TextStyle(
-              fontFamily: 'Edu',
+              fontFamily: 'PTSerif-Bold',
               fontSize: isSmallScreen ? 32 : 48,
               fontWeight: FontWeight.bold,
               color: MyColors.homepageHeadlineText,
@@ -82,7 +82,7 @@ class HomeSection extends StatelessWidget {
             'Bringing functional, user-focused applications to life with precision.',
             textAlign: TextAlign.start,
             style: TextStyle(
-              fontFamily: 'Edu',
+              fontFamily: 'PTSerif-Regular',
               fontSize: isSmallScreen ? 18 : 24,
               color: MyColors.homepagePrimaryText,
             ),

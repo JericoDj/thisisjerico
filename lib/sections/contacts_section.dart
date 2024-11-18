@@ -69,7 +69,7 @@ class ContactSection extends StatelessWidget {
           Text(
             'Contact me',
             style: TextStyle(
-              fontFamily: 'Caligraphy',
+              fontFamily: 'PTSerif-Bold',
               fontSize: 48,
               fontWeight: FontWeight.bold,
               color: MyColors.homepageHeadlineText,
@@ -79,7 +79,8 @@ class ContactSection extends StatelessWidget {
           Text(
             'Interested in collaborating or just want to say hi? Feel free to reach out!',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 18, color: MyColors.primaryText),
+            style: TextStyle(fontFamily: 'PTSerif-Regular' ,fontSize: 18, color: MyColors.primaryText),
+
           ),
           SizedBox(height: 32),
 
@@ -88,7 +89,7 @@ class ContactSection extends StatelessWidget {
             onPressed: _sendEmail,
             child: Text(
               'Contact Me',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'PTSerif-Bold'),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: MyColors.accentBlue,
@@ -104,7 +105,7 @@ class ContactSection extends StatelessWidget {
             icon: Icon(Icons.schedule, color: Colors.white),
             label: Text(
               'Schedule a 30-minute Call',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'PTSerif-Regular'),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: MyColors.accentGreen,
@@ -125,6 +126,7 @@ class ContactSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              fontFamily: 'PTSerif-Regular',
               color: MyColors.secondaryText,
             ),
           ),
@@ -149,6 +151,7 @@ class ContactSection extends StatelessWidget {
               SelectableText(
                 'dejesusjerico528@gmail.com',
                 style: TextStyle(
+                  fontFamily: 'PTSerif-Regular',
                   fontSize: 16,
                   color: MyColors.primaryText,
                   decoration: TextDecoration.underline,

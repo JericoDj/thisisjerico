@@ -35,7 +35,7 @@ class AboutSection extends StatelessWidget {
             'About Me',
             style: TextStyle(
               fontSize: isSmallScreen ? 36 : 48,
-              fontFamily: 'Caligraphy',
+              fontFamily: 'PTSerif-Bold',
               fontWeight: FontWeight.bold,
               color: MyColors.homepageHeadlineText,
             ),
@@ -46,7 +46,7 @@ class AboutSection extends StatelessWidget {
           Text(
             'Hi!, my name is Jerico.',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: isSmallScreen ? 20 : 24, fontWeight: FontWeight.bold, color: MyColors.homepageHeadlineText),
+            style: TextStyle(fontSize: isSmallScreen ? 20 : 24,fontFamily: 'PTSerif-Regular', fontWeight: FontWeight.bold, color: MyColors.homepageHeadlineText),
           ),
           SizedBox(height: 12),
           Padding(
@@ -54,7 +54,7 @@ class AboutSection extends StatelessWidget {
             child: Text(
               "I'm a freelance Flutter developer who started my career in the Hospitality Industry but discovered my true passion in creating cross-platform mobile and web applications. A self-trained developer, I specialize in Firebase backend integration and have experience in implementing secure payment processing solutions. My background in customer service has shaped my focus on user experience, while my technical skills allow me to deliver efficient, responsive designs. I’m always eager to learn new technologies and push the boundaries of what's possible to create impactful, user-friendly applications.",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: isSmallScreen ? 14 : 16, color: MyColors.primaryText),
+              style: TextStyle(fontFamily: 'PTSerif-Regular',fontSize: isSmallScreen ? 14 : 16, color: MyColors.primaryText),
             ),
           ),
 
@@ -84,6 +84,7 @@ class AboutSection extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: isSmallScreen ? 14 : 16,
+                fontFamily: 'PTSerif-Italic',
                 fontStyle: FontStyle.italic,
                 color: MyColors.secondaryText,
               ),
@@ -96,7 +97,7 @@ class AboutSection extends StatelessWidget {
           Text(
             'What I Bring to the Table',
             style: TextStyle(
-              fontFamily: 'Edu',
+              fontFamily: 'PTSerif-Bold',
               fontSize: isSmallScreen ? 20 : 24,
               fontWeight: FontWeight.w600,
               color: MyColors.homepageHeadlineText,
@@ -108,7 +109,7 @@ class AboutSection extends StatelessWidget {
             child: Text(
               "With a solid foundation in Flutter development, I bring a unique blend of technical expertise and customer-focused design thinking to each project. My experience in backend integration, secure payment solutions, and real-time data handling allows me to create comprehensive, seamless applications that not only meet client needs but also deliver a smooth user experience. I’m committed to building reliable, scalable applications and am always ready to explore innovative ways to solve challenges.",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: isSmallScreen ? 14 : 16, color: MyColors.primaryText),
+              style: TextStyle(fontFamily: 'PTSerif-Regular',fontSize: isSmallScreen ? 14 : 16, color: MyColors.primaryText),
             ),
           ),
           SizedBox(height: 24),
@@ -133,6 +134,7 @@ class AboutSection extends StatelessWidget {
                       expertise['title'],
                       style: TextStyle(
                         fontSize: isSmallScreen ? 14 : 16,
+                        fontFamily: 'PTSerif-Bold',
                         fontWeight: FontWeight.bold,
                         color: MyColors.primaryText,
                       ),
@@ -141,6 +143,7 @@ class AboutSection extends StatelessWidget {
                       expertise['subtitle'],
                       style: TextStyle(
                         fontSize: isSmallScreen ? 12 : 14,
+                        fontFamily: 'PTSerif-Regular',
                         color: MyColors.primaryText,
                       ),
                       textAlign: TextAlign.center,
@@ -156,7 +159,7 @@ class AboutSection extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: downloadCV,
             icon: Icon(Icons.download, color: Colors.white),
-            label: Text('Download CV', style: TextStyle(color: Colors.white)),
+            label: Text('Download CV', style: TextStyle(color: Colors.white,fontFamily: 'PTSerif-Bold')),
             style: ElevatedButton.styleFrom(
               backgroundColor: MyColors.primaryButtonBackground,
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),

@@ -160,9 +160,10 @@ class _HomePageState extends State<HomePage> {
       body: Theme(
         data: Theme.of(context).copyWith(
           scrollbarTheme: ScrollbarThemeData(
-            thumbColor: MaterialStateProperty.all(MyColors.accentBlue),
-            trackColor: MaterialStateProperty.all(MyColors.sectionLightGray),
-            thickness: MaterialStateProperty.all(8.0),
+
+            thumbColor: WidgetStateProperty.all(MyColors.accentBlue),
+            trackColor: WidgetStateProperty.all(MyColors.sectionLightGray),
+            thickness: WidgetStateProperty.all(8.0),
             radius: Radius.circular(8.0),
           ),
         ),

@@ -108,7 +108,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                           ? MyColors.navigationBarButtonTextSelected
                           : MyColors.navigationBarButtonText,
                       fontSize: 20,
-                      fontFamily: 'Edu',
+                      fontFamily: 'PTSerif-Bold',
                     ),
                   ),
                 ),

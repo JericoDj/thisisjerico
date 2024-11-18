@@ -41,6 +41,7 @@ dependencies:
   dynamic_fa_icons: ^1.3.0+6
   flutter_staggered_animations: ^1.1.1
   awesome_snackbar_content: ^0.1.4
+  updown_arrow_scroller: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -109,6 +110,18 @@ flutter:
     - family: Edu
       fonts:
         - asset: assets/fonts/EduAUVICWANTPre-VariableFont_wght.ttf
+    - family: PTSerif-Bold
+      fonts:
+        - asset: assets/fonts/PTSerif-Bold.ttf
+    - family: PTSerif-Bold-Italic
+      fonts:
+        - asset: assets/fonts/PTSerif-BoldItalic.ttf
+    - family: PTSerif-Italic
+      fonts:
+        - asset: assets/fonts/PTSerif-Italic.ttf
+    - family: PTSerif-Regular
+      fonts:
+        - asset: assets/fonts/PTSerif-Regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

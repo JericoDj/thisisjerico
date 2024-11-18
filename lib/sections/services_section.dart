@@ -24,7 +24,7 @@ class ServicesSection extends StatelessWidget {
           Text(
             'Services',
             style: TextStyle(
-              fontFamily: 'Caligraphy',
+              fontFamily: 'PTSerif-Bold',
               fontSize: isSmallScreen ? 36 : 48,
               fontWeight: FontWeight.bold,
               color: MyColors.homepageHeadlineText,
@@ -41,6 +41,7 @@ class ServicesSection extends StatelessWidget {
                   'I’m here to bring your ideas to life with a focus on functionality, security, and user-friendly design.',
               textAlign: TextAlign.center,
               style: TextStyle(
+                fontFamily: 'PTSerif-Regular',
                 fontSize: isSmallScreen ? 14 : 16,
                 color: MyColors.primaryText,
               ),
@@ -83,7 +84,7 @@ class ServicesSection extends StatelessWidget {
           Text(
             'Interested in working together?',
             style: TextStyle(
-              fontFamily: 'Edu',
+              fontFamily: 'PTSerif-Bold',
               fontSize: isSmallScreen ? 20 : 24,
               fontWeight: FontWeight.bold,
               color: MyColors.homepageHeadlineText,
@@ -93,6 +94,7 @@ class ServicesSection extends StatelessWidget {
           Text(
             'Get in touch for more information or to request a quote.',
             style: TextStyle(
+              fontFamily: 'PTSerif-Regular',
               fontSize: isSmallScreen ? 14 : 16,
               color: MyColors.primaryText,
             ),

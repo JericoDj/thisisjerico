@@ -330,6 +330,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  updown_arrow_scroller:
+    dependency: "direct main"
+    description:
+      name: updown_arrow_scroller
+      sha256: "883667fec20dcbd10a34f4b5e85ff38b5340e94dda27072644989d70938b7393"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   url_launcher:
     dependency: "direct main"
     description:

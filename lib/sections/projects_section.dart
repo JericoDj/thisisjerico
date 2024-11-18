@@ -97,7 +97,7 @@ class ProjectsSection extends StatelessWidget {
           'Projects',
           style: TextStyle(
             fontSize: isSmallScreen ? 36 : 48,
-            fontFamily: 'Caligraphy',
+            fontFamily: 'PTSerif-Bold',
             fontWeight: FontWeight.bold,
             color: MyColors.homepageHeadlineText,
           ),
@@ -107,6 +107,7 @@ class ProjectsSection extends StatelessWidget {
               'Here are some of the projects I’ve developed to help clients achieve seamless and efficient solutions,',
               textAlign: TextAlign.center,
               style: TextStyle(
+                fontFamily: 'PTSerif-Regular',
                 fontSize: descriptionFontSize,
                 color: MyColors.primaryText,
               ),
@@ -115,6 +116,7 @@ class ProjectsSection extends StatelessWidget {
               'from educational platforms to HR management tools.',
               textAlign: TextAlign.center,
               style: TextStyle(
+                fontFamily: 'PTSerif-Regular',
                 fontSize: descriptionFontSize,
                 color: MyColors.primaryText,
               ),
@@ -145,6 +147,7 @@ class ProjectsSection extends StatelessWidget {
                             child: Text(
                               project['name'],
                               style: TextStyle(
+                                fontFamily: 'PTSerif-Bold',
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                                 color: MyColors.primaryText,
@@ -158,6 +161,7 @@ class ProjectsSection extends StatelessWidget {
                           Text(
                             project['description'],
                             style: TextStyle(
+                              fontFamily: 'PTSerif-Regular',
                               fontSize: descriptionFontSize,
                               color: MyColors.secondaryText,
                             ),
