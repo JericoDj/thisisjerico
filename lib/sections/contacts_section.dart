@@ -153,7 +153,7 @@ class ContactSection extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'PTSerif-Regular',
                   fontSize: 16,
-                  color: MyColors.primaryText,
+                  color: MyColors.accentBlue,
                   decoration: TextDecoration.underline,
                 ),
               ),

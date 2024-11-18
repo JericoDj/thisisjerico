@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:thisisjerico/sections/widgets/animated_shape.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../colors/colors.dart';
 
 class HomeSection extends StatelessWidget {
@@ -12,104 +14,197 @@ class HomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Check for small screen using MediaQuery
     bool isSmallScreen = MediaQuery.of(context).size.width < 600;
-    double horizontalPadding = MediaQuery.of(context).size.width * 0.1;
+    bool isMediumScreen = MediaQuery.of(context).size.width < 900;
 
-    // Set minimum and maximum padding values
+    // Calculate padding dynamically based on screen width
+    double horizontalPadding = MediaQuery.of(context).size.width * 0.1;
     horizontalPadding = horizontalPadding.clamp(16.0, 150.0);
 
+    // Calculate radius dynamically based on screen size
+    double radius =
+        isSmallScreen ? 60.0 : 90.0; // Adjust radius for small or large screen
+
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 16),
+      padding:
+          EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 16),
       color: MyColors.homepageBackground,
-      child: isSmallScreen
-          ? Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Column(
         children: [
-          _buildImageAndSocialButtons(context),
-          SizedBox(height: 32),
-          _buildTaglineAndDescription(context),
-        ],
-      )
-          : Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(child: _buildImageAndSocialButtons(context)),
-          Expanded(child: _buildTaglineAndDescription(context)),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                    child: _buildImage(context, isSmallScreen, isMediumScreen)),
+                // Adjust image size for medium screens as well
+                SizedBox(width: isSmallScreen ? 20 : 40),
+                Expanded(
+                    child: _buildTaglineAndDescription(
+                        context, isSmallScreen, radius)),
+              ],
+            ),
+          ),
+
+          isSmallScreen
+              ? Column(
+                children: [
+                  SizedBox(height: 10,),
+                  SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    _buildSocialIcon(
+                        FontAwesomeIcons.facebook,
+                        Colors.blue,
+                        'https://www.facebook.com/MjericoDj/',
+                        isSmallScreen),
+                    _buildSocialIcon(
+                        FontAwesomeIcons.instagram,
+                        Colors.red,
+                        'https://instagram.com/Djjerico',
+                        isSmallScreen),
+                    _buildSocialIcon(
+                        FontAwesomeIcons.linkedin,
+                        Colors.blue,
+                        'https://www.linkedin.com/in/mjericodj',
+                        isSmallScreen),
+                    _buildSocialIcon(
+                        FontAwesomeIcons.github,
+                        Colors.black,
+                        'https://github.com/JericoDj',
+                        isSmallScreen),
+                  ],
+                              ),
+                            ),
+                ],
+              )
+              :   SizedBox.shrink()
         ],
       ),
     );
   }
 
-  Widget _buildImageAndSocialButtons(BuildContext context) {
+  // Updated _buildImage to handle different sizes for small and medium screens
+  Widget _buildImage(
+      BuildContext context, bool isSmallScreen, bool isMediumScreen) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double imageHeight = screenWidth < 600 ? screenWidth * 1.1 : 660; // Adjust based on screen width
-    double imageWidth = screenWidth < 600 ? screenWidth * 0.8 : 300; // Adjust width for smaller screens
 
     return Container(
-      width: imageWidth,
-      height: imageHeight,
+      width: isSmallScreen
+          ? screenWidth * 0.6
+          : (isMediumScreen ? screenWidth * 0.6 : screenWidth * 0.4),
+      // Adjust size for small and medium screens
+      height: isSmallScreen
+          ? screenWidth * 0.60
+          : (isMediumScreen ? screenWidth * 0.62 : screenWidth * 0.4),
+      // Adjust height for small and medium screens
       decoration: BoxDecoration(
-        color: MyColors.homepageBackground,
-        border: Border(bottom: BorderSide(width: 2, color: MyColors.dividerColor)),
         image: DecorationImage(
           image: AssetImage('assets/images/Web_Picture.png'),
           fit: BoxFit.contain,
+        ),
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey, // Grey color for the bottom border
+            width: 0.5, // Set the width of the bottom border
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildTaglineAndDescription(BuildContext context) {
-    bool isSmallScreen = MediaQuery.of(context).size.width < 600;
-
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            'Turning Ideas Into Reality',
-            style: TextStyle(
-              fontFamily: 'PTSerif-Bold',
-              fontSize: isSmallScreen ? 32 : 48,
-              fontWeight: FontWeight.bold,
-              color: MyColors.homepageHeadlineText,
+  Widget _buildTaglineAndDescription(
+      BuildContext context, bool isSmallScreen, double radius) {
+    return Column(
+      children: [
+        SizedBox(height: isSmallScreen ? 60 : 100),
+        AnimatedHexagon(size: isSmallScreen ? 30 : 40, radius: radius),
+        // Pass radius based on screen size
+        SizedBox(height: isSmallScreen ? 60 : 100),
+        Stack(
+          alignment: Alignment.centerLeft,
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Turning Ideas Into Reality',
+                    style: TextStyle(
+                      fontFamily: 'PTSerif-Bold',
+                      fontSize: isSmallScreen ? 24 : 48,
+                      fontWeight: FontWeight.bold,
+                      color: MyColors.homepageHeadlineText,
+                    ),
+                  ),
+                  SizedBox(height: isSmallScreen ? 8 : 16),
+                  Text(
+                    'Bringing functional, user-focused applications to life with precision.',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontFamily: 'PTSerif-Regular',
+                      fontSize: isSmallScreen ? 14 : 24,
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                  SizedBox(height: isSmallScreen ? 16 : 24),
+                  isSmallScreen
+                      ? SizedBox.shrink()
+                      : SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              _buildSocialIcon(
+                                  FontAwesomeIcons.facebook,
+                                  Colors.blue,
+                                  'https://www.facebook.com/MjericoDj/',
+                                  isSmallScreen),
+                              _buildSocialIcon(
+                                  FontAwesomeIcons.instagram,
+                                  Colors.red,
+                                  'https://instagram.com/Djjerico',
+                                  isSmallScreen),
+                              _buildSocialIcon(
+                                  FontAwesomeIcons.linkedin,
+                                  Colors.blue,
+                                  'https://www.linkedin.com/in/mjericodj',
+                                  isSmallScreen),
+                              _buildSocialIcon(
+                                  FontAwesomeIcons.github,
+                                  Colors.black,
+                                  'https://github.com/JericoDj',
+                                  isSmallScreen),
+                            ],
+                          ),
+                        )
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: isSmallScreen ? 8 : 16),
-          Text(
-            'Bringing functional, user-focused applications to life with precision.',
-            textAlign: TextAlign.start,
-            style: TextStyle(
-              fontFamily: 'PTSerif-Regular',
-              fontSize: isSmallScreen ? 18 : 24,
-              color: MyColors.homepagePrimaryText,
-            ),
-          ),
-          SizedBox(height: isSmallScreen ? 16 : 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              _buildSocialIcon(FontAwesomeIcons.facebook, MyColors.accentBlue, 'https://www.facebook.com/MjericoDj/'),
-              _buildSocialIcon(FontAwesomeIcons.instagram, MyColors.accentRed, 'https://instagram.com/Djjerico'),
-              _buildSocialIcon(FontAwesomeIcons.linkedin, MyColors.accentBlue, 'https://www.linkedin.com/in/mjericodj'),
-              _buildSocialIcon(FontAwesomeIcons.github, MyColors.primaryText, 'https://github.com/JericoDj'),
-            ],
-          ),
-        ],
-      ),
+          ],
+        ),
+      ],
     );
   }
 
-  Widget _buildSocialIcon(IconData icon, Color color, String url) {
+  Widget _buildSocialIcon(
+      IconData icon, Color color, String url, bool isSmall) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      margin: EdgeInsets.symmetric(horizontal: isSmall ? 5.0 : 8.0),
       decoration: BoxDecoration(
-        border: Border.all(width: 1, color: MyColors.socialMediaButtonBorder),
+        border: Border.all(width: 1, color: Colors.grey),
         shape: BoxShape.circle,
       ),
       child: IconButton(
+        iconSize: isSmall ? 16.0 : 24.0,
+        // Adjust icon size based on screen size
+        padding: EdgeInsets.all(isSmall ? 4.0 : 8.0),
+        // Smaller padding for smaller icons
         icon: FaIcon(icon, color: color),
         onPressed: () => _launchURL(url),
       ),

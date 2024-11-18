@@ -91,12 +91,12 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                   style: TextButton.styleFrom(
                     side: BorderSide(
                       color: isSelected
-                          ? MyColors.navigationBarButtonBorderSelected
-                          : MyColors.navigationBarButtonBorder,
+                          ? MyColors.navigationBarButtonBorder
+                          : MyColors.navigationBarButtonBorderSelected,
                     ),
                     backgroundColor: isSelected
-                        ? MyColors.navigationBarButtonSelected
-                        : MyColors.navigationBarButtonBackground,
+                        ? MyColors.navigationBarButtonBackground
+                        : MyColors.navigationBarButtonSelected,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),

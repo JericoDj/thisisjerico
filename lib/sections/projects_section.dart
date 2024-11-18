@@ -11,7 +11,7 @@ class ProjectsSection extends StatelessWidget {
     }
   }
 
-  void _showImageDialog(BuildContext context, String imagePath) {
+  void _showImageDialog(BuildContext context, String imagePath, bool isSmallScreen) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -22,8 +22,8 @@ class ProjectsSection extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.all(8),
-                width: screenSize.width * 0.8,
-                height: screenSize.height * 0.6,
+                width: isSmallScreen ? screenSize.width * 0.6 : screenSize.width * 0.6,  // Adjust dialog width based on screen size
+                height: isSmallScreen? screenSize.height * 0.3 : screenSize.height * 0.75, // Fixed height
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -50,6 +50,7 @@ class ProjectsSection extends StatelessWidget {
       },
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,15 +94,15 @@ class ProjectsSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-          Text(
-          'Projects',
-          style: TextStyle(
-            fontSize: isSmallScreen ? 36 : 48,
-            fontFamily: 'PTSerif-Bold',
-            fontWeight: FontWeight.bold,
-            color: MyColors.homepageHeadlineText,
-          ),
-        ),
+            Text(
+              'Projects',
+              style: TextStyle(
+                fontSize: isSmallScreen ? 36 : 48,
+                fontFamily: 'PTSerif-Bold',
+                fontWeight: FontWeight.bold,
+                color: MyColors.homepageHeadlineText,
+              ),
+            ),
             SizedBox(height: 12),
             Text(
               'Here are some of the projects I’ve developed to help clients achieve seamless and efficient solutions,',
@@ -173,7 +174,7 @@ class ProjectsSection extends StatelessWidget {
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
                             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: isSmallScreen ? 1 : 2,
+                              crossAxisCount: isSmallScreen ? 2 : 2, // Adjust 2 per row on small screen
                               mainAxisSpacing: 8,
                               crossAxisSpacing: 8,
                               childAspectRatio: 1.6,
@@ -181,7 +182,7 @@ class ProjectsSection extends StatelessWidget {
                             itemCount: project['images'].length,
                             itemBuilder: (context, index) {
                               return GestureDetector(
-                                onTap: () => _showImageDialog(context, project['images'][index]),
+                                onTap: () => _showImageDialog(context, project['images'][index],isSmallScreen),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(

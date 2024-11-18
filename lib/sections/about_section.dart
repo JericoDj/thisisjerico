@@ -25,14 +25,14 @@ class AboutSection extends StatelessWidget {
     ];
 
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: isSmallScreen ? 16 : 64),
+      padding: EdgeInsets.symmetric(vertical: isSmallScreen? 0:32, horizontal: isSmallScreen ? 16 : 64),
       color: MyColors.homepageBackground,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // About Me Section
           Text(
-            'About Me',
+            'About',
             style: TextStyle(
               fontSize: isSmallScreen ? 36 : 48,
               fontFamily: 'PTSerif-Bold',

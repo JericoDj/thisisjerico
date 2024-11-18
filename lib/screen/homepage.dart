@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:thisisjerico/colors/colors.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../navigation_bar.dart';
 import '../sections/about_section.dart';
 import '../sections/contacts_section.dart';
 import '../sections/home_section.dart';
 import '../sections/projects_section.dart';
 import '../sections/services_section.dart';
+import '../colors/colors.dart';
+import 'dart:html' as html;  // Add this import
 
 class HomePage extends StatefulWidget {
   @override
@@ -25,6 +25,8 @@ class _HomePageState extends State<HomePage> {
     'projects': GlobalKey(),
     'contact': GlobalKey(),
   };
+
+  bool _isRefreshing = false;
 
   @override
   void initState() {
@@ -73,6 +75,25 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  // This method simulates refreshing the data/content
+  Future<void> _onRefresh() async {
+    setState(() {
+      _isRefreshing = true;
+    });
+
+    // Simulate some data refresh (e.g., API call or UI update)
+    await Future.delayed(Duration(seconds: 2));  // Simulate some network call
+
+    setState(() {
+      _isRefreshing = false;  // After refreshing, set _isRefreshing to false
+    });
+
+    // Trigger a full page reload in the browser
+    html.window.location.reload();
+
+    print("Refreshed!");
+  }
+
   @override
   void dispose() {
     _scrollController.removeListener(_onScroll);
@@ -113,9 +134,11 @@ class _HomePageState extends State<HomePage> {
               title: Text(
                 'About',
                 style: TextStyle(
-                  fontFamily: 'Edu',
+                  fontFamily: 'PTSerif-Bold',
                   fontSize: 20,
-                  color: currentSection == 'about' ? MyColors.accentBlue : Colors.black,
+                  color: currentSection == 'about'
+                      ? MyColors.navigationBarButtonBackground
+                      : MyColors.accentBlue,
                 ),
               ),
               onTap: () => _scrollToSection('about'),
@@ -124,9 +147,11 @@ class _HomePageState extends State<HomePage> {
               title: Text(
                 'Projects',
                 style: TextStyle(
-                  fontFamily: 'Edu',
+                  fontFamily: 'PTSerif-Bold',
                   fontSize: 20,
-                  color: currentSection == 'projects' ? MyColors.accentBlue : Colors.black,
+                  color: currentSection == 'projects'
+                      ? MyColors.navigationBarButtonBackground
+                      : MyColors.accentBlue,
                 ),
               ),
               onTap: () => _scrollToSection('projects'),
@@ -135,9 +160,11 @@ class _HomePageState extends State<HomePage> {
               title: Text(
                 'Services',
                 style: TextStyle(
-                  fontFamily: 'Edu',
+                  fontFamily: 'PTSerif-Bold',
                   fontSize: 20,
-                  color: currentSection == 'services' ? MyColors.accentBlue : Colors.black,
+                  color: currentSection == 'services'
+                      ? MyColors.navigationBarButtonBackground
+                      : MyColors.accentBlue,
                 ),
               ),
               onTap: () => _scrollToSection('services'),
@@ -146,9 +173,11 @@ class _HomePageState extends State<HomePage> {
               title: Text(
                 'Contact',
                 style: TextStyle(
-                  fontFamily: 'Edu',
+                  fontFamily: 'PTSerif-Bold',
                   fontSize: 20,
-                  color: currentSection == 'contact' ? MyColors.accentBlue : Colors.black,
+                  color: currentSection == 'contact'
+                      ? MyColors.navigationBarButtonBackground
+                      : MyColors.accentBlue,
                 ),
               ),
               onTap: () => _scrollToSection('contact'),
@@ -156,20 +185,19 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       )
-          : null, // Only display drawer in mobile view
+          : null,
       body: Theme(
         data: Theme.of(context).copyWith(
           scrollbarTheme: ScrollbarThemeData(
-
+            thumbVisibility: WidgetStateProperty.all(true),
             thumbColor: WidgetStateProperty.all(MyColors.accentBlue),
             trackColor: WidgetStateProperty.all(MyColors.sectionLightGray),
-            thickness: WidgetStateProperty.all(8.0),
+            thickness: WidgetStateProperty.all(isMobileView ? 8.0 : 10),
             radius: Radius.circular(8.0),
           ),
         ),
-        child: Scrollbar(
-          controller: _scrollController,
-          thumbVisibility: true,
+        child: RefreshIndicator(
+          onRefresh: _onRefresh,
           child: SingleChildScrollView(
             controller: _scrollController,
             child: Column(
