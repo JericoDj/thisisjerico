@@ -51,12 +51,13 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
           child: Text(
             'Jerico De Jesus',
             style: TextStyle(
-              fontFamily: 'Caligraphy',
+              fontFamily: 'Alegreya',
+
               color: widget.currentSection == 'home'
                   ? MyColors.accentBlue
                   : MyColors.navigationBarName,
               fontSize: 32,
-              fontWeight: FontWeight.bold,
+
             ),
           ),
         ),
@@ -69,12 +70,11 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
             child: Text(
               'Jerico De Jesus',
               style: TextStyle(
-                fontFamily: 'Caligraphy',
+                fontFamily: 'Alegreya',
                 color: widget.currentSection == 'home'
                     ? MyColors.accentBlue
                     : MyColors.navigationBarName,
                 fontSize: 32,
-                fontWeight: FontWeight.bold,
               ),
             ),
           ),

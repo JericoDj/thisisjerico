@@ -103,7 +103,8 @@ class HomeSection extends StatelessWidget {
       // Adjust height for small and medium screens
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/Web_Picture.png'),
+          image: AssetImage('assets/images/Picture-hd.png'),
+
           fit: BoxFit.contain,
         ),
         border: Border(

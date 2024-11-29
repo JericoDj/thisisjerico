@@ -85,6 +85,8 @@ flutter:
     - assets/images/edukid_sample/Edukid 7.png
     - assets/images/edukid_sample/Edukid 8.png
     - assets/images/edukid_sample/Edukid.png
+    - assets/images/Picture_HD.png
+    - assets/images/Picture-hd.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -104,9 +106,9 @@ flutter:
     - family: Charlotte
       fonts:
         - asset: assets/fonts/charlotte.ttf
-    - family: Caligraphy
+    - family: Alegreya
       fonts:
-        - asset: assets/fonts/CalligraphyFLF.ttf
+        - asset: assets/fonts/Alegreya-SemiBold.ttf
     - family: Edu
       fonts:
         - asset: assets/fonts/EduAUVICWANTPre-VariableFont_wght.ttf
@@ -122,6 +124,9 @@ flutter:
     - family: PTSerif-Regular
       fonts:
         - asset: assets/fonts/PTSerif-Regular.ttf
+
+
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
