@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "5d35f3249f001688fd4e764b5b805c75",
-"assets/AssetManifest.bin.json": "bbcfa3b3290bd5d4fdc50f82d73909df",
-"assets/AssetManifest.json": "16f1a0909b97c93e4aea104a527400e1",
+const RESOURCES = {"assets/AssetManifest.bin": "c0ec72f7db573bbd7c27ffc4a44990f1",
+"assets/AssetManifest.bin.json": "3d2f1dae26b2f7c1ce0a5e110d72184c",
+"assets/AssetManifest.json": "accb232ff43ba4c9da6c645a5dc22f97",
 "assets/assets/fonts/CalligraphyFLF.ttf": "0326b724eba54da3e8184afb51a51aed",
 "assets/assets/fonts/charlotte.ttf": "8d6e47685a9f9363d62eb85c8c30f2d4",
 "assets/assets/fonts/EduAUVICWANTPre-VariableFont_wght.ttf": "5eda1a878475f5bddb26653888d0b34b",
@@ -20,6 +20,8 @@ const RESOURCES = {"assets/AssetManifest.bin": "5d35f3249f001688fd4e764b5b805c75
 "assets/assets/images/edukid_sample/Edukid%25207.png": "f57fb31238c8c5470cd774a7837ddd27",
 "assets/assets/images/edukid_sample/Edukid%25208.png": "958baeae0743b8927e349c07c5708d15",
 "assets/assets/images/edukid_sample/Edukid.png": "6b644816a45f2ffd67e8448e92b5d371",
+"assets/assets/images/Picture-hd.png": "3e7da6474bd3faf7f2bce0c58b881791",
+"assets/assets/images/Picture_HD.png": "85185aec43ff6825d92f743c1ee3fee6",
 "assets/assets/images/Picture_web.png": "fd1d1d31d74527f045f9472b3da8ea74",
 "assets/assets/images/timekeeper_sample/Timekeeper%252010.jpeg": "0c9cce05dedb20ab0e203d4cbaf47ebb",
 "assets/assets/images/timekeeper_sample/Timekeeper%25203.png": "ac263e96aa5d5fd4a01c7dea8e9facae",
@@ -57,7 +59,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "5d35f3249f001688fd4e764b5b805c75
 "canvaskit/skwasm.worker.js": "89990e8c92bcb123999aa81f7e203b1c",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "flutter.js": "f393d3c16b631f36852323de8e583132",
-"flutter_bootstrap.js": "a73eb34979f7da83f764b589514c9a48",
+"flutter_bootstrap.js": "eec59bacb5dd6cf4bbdc1fe705dca91b",
 "icons/android-chrome-192x192.png": "d8c6c056a23cd12b01d2cc890e3f8aab",
 "icons/android-chrome-512x512.png": "6be4ca7cdcd76356d19c2be7658bc878",
 "icons/apple-touch-icon.png": "fa6c09c35b00c8a2e957d947ce26d909",
@@ -68,7 +70,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "5d35f3249f001688fd4e764b5b805c75
 "index.html": "2a5c5688de96d7a37f6b7237f4da9562",
 "/": "2a5c5688de96d7a37f6b7237f4da9562",
 "logo.png": "d8c6c056a23cd12b01d2cc890e3f8aab",
-"main.dart.js": "cff7d00759d68608e0a49e7a85c71249",
+"main.dart.js": "e6b73e4989bc81feacb9600853047cfe",
 "manifest.json": "b7f4a761e0d0c7c9cc75b26984d2687b",
 "version.json": "ab4d6327ae11f1d6b42ac92e7e0f3342"};
 // The application shell files that are downloaded before a service worker can
