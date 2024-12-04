@@ -136,9 +136,9 @@ class ContactSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildSocialIcon(FontAwesomeIcons.facebook, MyColors.accentBlue, 'https://facebook.com/your-profile'),
-              _buildSocialIcon(FontAwesomeIcons.instagram, MyColors.accentRed, 'https://instagram.com/your-profile'),
-              _buildSocialIcon(FontAwesomeIcons.linkedin, MyColors.accentBlue, 'https://linkedin.com/in/your-profile'),
+              _buildSocialIcon(FontAwesomeIcons.facebook, MyColors.accentBlue, 'https://www.facebook.com/MjericoDj/'),
+              _buildSocialIcon(FontAwesomeIcons.instagram, MyColors.accentRed, 'https://www.instagram.com/djjerico/profilecard/?igsh=YXdyaGVxNGM3b3ly'),
+              _buildSocialIcon(FontAwesomeIcons.linkedin, MyColors.accentBlue, 'https://www.linkedin.com/in/mjericodj'),
               _buildSocialIcon(FontAwesomeIcons.envelope, MyColors.accentGreen, 'mailto:dejesusjerico528@gmail.com'),
             ],
           ),

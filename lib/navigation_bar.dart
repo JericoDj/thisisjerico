@@ -76,7 +76,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
                     : MyColors.navigationBarName,
                 fontSize: 32,
               ),
-            ),
+            ),  
           ),
           Spacer(),
           Row(

@@ -64,7 +64,7 @@ class HomeSection extends StatelessWidget {
                     _buildSocialIcon(
                         FontAwesomeIcons.instagram,
                         Colors.red,
-                        'https://instagram.com/Djjerico',
+                        'https://www.instagram.com/djjerico/profilecard/?igsh=YXdyaGVxNGM3b3ly',
                         isSmallScreen),
                     _buildSocialIcon(
                         FontAwesomeIcons.linkedin,
@@ -169,7 +169,7 @@ class HomeSection extends StatelessWidget {
                               _buildSocialIcon(
                                   FontAwesomeIcons.instagram,
                                   Colors.red,
-                                  'https://instagram.com/Djjerico',
+                                  'https://www.instagram.com/djjerico/profilecard/?igsh=YXdyaGVxNGM3b3ly',
                                   isSmallScreen),
                               _buildSocialIcon(
                                   FontAwesomeIcons.linkedin,
